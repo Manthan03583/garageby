@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #14161A;
+  --cobalt: #0052FF;
+  --font-sans: var(--font-jakarta);
+  --font-mono: var(--font-jetbrains);
+  --font-inter: var(--font-inter-var);
+}
+
+/* Force light mode — no dark mode for Cleanroom Aesthetic */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #14161A;
+  }
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Engineering Blueprint Grid */
+.blueprint-grid {
+  background-color: #ffffff;
+  background-image:
+    linear-gradient(rgba(0, 82, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 82, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(rgba(0, 82, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 82, 255, 0.015) 1px, transparent 1px);
+  background-size: 80px 80px, 80px 80px, 16px 16px, 16px 16px;
+  background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+}
+
+/* Pulsing green status dot */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.4); }
+}
+
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Technical fade-in for Framer Motion targets */
+.section-fade {
+  opacity: 0;
+}
+
+/* Waveguide animation */
+@keyframes light-travel {
+  0% { stroke-dashoffset: 400; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.waveguide-beam {
+  stroke-dasharray: 400;
+  animation: light-travel 3s ease-in-out infinite;
+}
+
+/* Chip diagram highlight */
+.chip-highlight {
+  box-shadow: 0 0 0 2px #0052FF, 0 0 24px rgba(0, 82, 255, 0.15);
+}
