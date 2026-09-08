@@ -180,7 +180,7 @@ function ThermalSection() {
           {/* Diagram */}
           <motion.div variants={fadeIn} initial="hidden" animate={inView ? "visible" : "hidden"} className="border border-gray-200 rounded-sm min-h-[480px] relative overflow-hidden shadow-sm">
             <Image
-              src="/Gemini_Generated_Image_zev1lpzev1lpzev1.png"
+              src="/gby-helmet-proto-rev-a.png"
               alt="GarageBy Sovereign Spatial Helmet — SLS PA12 Chassis, Passive Chimney Exhaust"
               fill
               className="object-cover object-center"
@@ -257,7 +257,7 @@ function SiliconSection() {
           </motion.div>
           <motion.div variants={fadeIn} initial="hidden" animate={inView ? "visible" : "hidden"} className="border border-[#0052FF]/25 rounded-sm min-h-[480px] relative overflow-hidden shadow-sm">
             <Image
-              src="/Gemini_Generated_Image_2vwoe02vwoe02vwo.png"
+              src="/gby-dcim-silicon-wafer.png"
               alt="8T-SRAM DCIM Array — GarageBy Core Silicon IP"
               fill
               className="object-cover"
@@ -299,7 +299,7 @@ function OpticsSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div variants={fadeIn} initial="hidden" animate={inView ? "visible" : "hidden"} className="border border-gray-200 rounded-sm min-h-[420px] relative overflow-hidden shadow-sm" style={{ backgroundColor: "#F1F2F4" }}>
             <Image
-              src="/Gemini_Generated_Image_xkho5zxkho5zxkho.png"
+              src="/gby-holographic-visor-110fov.png"
               alt="110-Degree Ultra-Wide Holographic Visor — GarageBy Optics, Alpha Stage"
               fill
               className="object-contain p-4"

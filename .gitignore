@@ -55,8 +55,13 @@ public/window.svg
 public/file.svg
 public/globe.svg
 
-# Stale optics image — replaced by Gemini_Generated_Image_xkho5zxkho5zxkho.png
+# Stale optics image — replaced by gby-holographic-visor-110fov.png
 public/Gemini_Generated_Image_flocwwflocwwfloc.png
+
+# Original Gemini-prefixed images — superseded by branded filenames below
+public/Gemini_Generated_Image_zev1lpzev1lpzev1.png
+public/Gemini_Generated_Image_2vwoe02vwoe02vwo.png
+public/Gemini_Generated_Image_xkho5zxkho5zxkho.png
 
 # Logo assets — not yet wired into any component
 public/logo.png
