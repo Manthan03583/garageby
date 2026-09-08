@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useInView, type Variants, type Transition } from "framer-motion";
 import { ArrowRight, ChevronRight, Layers, Zap, Shield, Thermometer, Factory, Radio } from "lucide-react";
@@ -33,9 +33,15 @@ function NavBar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded flex items-center justify-center text-white font-bold text-sm" style={{ backgroundColor: "#0052FF", fontFamily: "var(--font-jakarta)" }}>G</div>
-          <span className="text-[#14161A] font-bold text-lg tracking-tight" style={{ fontFamily: "var(--font-jakarta)" }}>GarageBy</span>
+        <div className="flex items-center">
+          <Image
+            src="/logo_with_name.png"
+            alt="GarageBy"
+            width={160}
+            height={44}
+            className="h-9 w-auto object-contain"
+            priority
+          />
         </div>
         <div className="flex items-center gap-2 border border-gray-200 rounded-sm px-3 py-1.5 bg-gray-50" style={{ fontFamily: "var(--font-jetbrains)" }}>
           <span className="w-2 h-2 rounded-full bg-emerald-500 pulse-dot inline-block" />
@@ -44,6 +50,22 @@ function NavBar() {
       </div>
     </nav>
   );
+}
+
+// ── Email / Dossier Link ───────────────────────────────────────────────────
+const MAILTO_LINK = "mailto:founder@garageby.com?subject=GarageBy%20Alpha%20%7C%20Technical%20Dossier%20Request&body=Please%20provide%20your%20institutional%20affiliation%20to%20receive%20the%20DCIM%20architecture%20dossier.";
+
+// Module-level ref so HeroSection (a sibling component) can trigger the toast
+let _setToast: ((msg: string | null) => void) | null = null;
+
+function handleDossierClick() {
+  navigator.clipboard.writeText("founder@garageby.com").then(() => {
+    _setToast?.("founder@garageby.com copied to clipboard · Opening email client");
+    setTimeout(() => _setToast?.(null), 4000);
+  }).catch(() => {
+    _setToast?.("founder@garageby.com copied to clipboard");
+    setTimeout(() => _setToast?.(null), 4000);
+  });
 }
 
 // ── Hero ────────────────────────────────────────────────────────────────────
@@ -65,7 +87,7 @@ function HeroSection() {
         </motion.div>
         <motion.div variants={fadeIn} className="w-full max-w-2xl aspect-video rounded-sm relative overflow-hidden border border-[#0052FF]/20 shadow-lg">
           <Image
-            src="/Gemini_Generated_Image_zev1lpzev1lpzev1.png"
+            src="/gby-helmet-proto-rev-a.png"
             alt="GarageBy Sovereign Spatial Helmet — ISO Class 5 Cleanroom, Prototype REV.A"
             fill
             className="object-cover"
@@ -98,8 +120,9 @@ function HeroSection() {
         </motion.p>
         <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 items-center">
           <a
-            href="mailto:founder@garageby.com?subject=GarageBy%20Alpha%20%7C%20Technical%20Dossier%20Request&body=Please%20provide%20your%20institutional%20affiliation%20to%20receive%20the%20DCIM%20architecture%20dossier."
-            className="flex items-center gap-2.5 px-8 py-3.5 rounded-sm text-white font-semibold text-sm transition-all duration-200 hover:opacity-90 active:scale-[0.98]"
+            href={MAILTO_LINK}
+            onClick={handleDossierClick}
+            className="flex items-center gap-2.5 px-8 py-3.5 rounded-sm text-white font-semibold text-sm transition-all duration-200 hover:opacity-90 active:scale-[0.98] cursor-pointer inline-flex"
             style={{ backgroundColor: "#0052FF", fontFamily: "var(--font-inter-var)" }}
           >
             Request Technical Dossier<ArrowRight size={16} strokeWidth={2} />
@@ -465,9 +488,14 @@ function Footer() {
   return (
     <footer className="py-8 px-6 bg-gray-50 border-t border-gray-100">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div className="flex items-center gap-2">
-          <div className="w-6 h-6 rounded flex items-center justify-center text-white font-bold text-xs" style={{ backgroundColor: "#0052FF", fontFamily: "var(--font-jakarta)" }}>G</div>
-          <span className="text-sm font-bold text-[#14161A]" style={{ fontFamily: "var(--font-jakarta)" }}>GarageBy</span>
+        <div className="flex items-center">
+          <Image
+            src="/logo_with_name.png"
+            alt="GarageBy"
+            width={130}
+            height={36}
+            className="h-7 w-auto object-contain"
+          />
         </div>
         <p className="text-[10px] text-gray-400 text-center tracking-wider" style={{ fontFamily: "var(--font-jetbrains)" }}>
           {`\u00A9 ${new Date().getFullYear()} GarageBy Technologies Pvt. Ltd. -- All rights reserved.`}
@@ -479,17 +507,29 @@ function Footer() {
 }
 
 // ── Page ────────────────────────────────────────────────────────────────────
+
 export default function Home() {
+  const [toastMsg, setToastMsg] = useState<string | null>(null);
+  _setToast = setToastMsg; // wire module ref to component state
   return (
-    <main className="flex flex-col">
-      <NavBar />
-      <HeroSection />
-      <ThermalSection />
-      <SiliconSection />
-      <OpticsSection />
-      <DeploymentSection />
-      <BackersSection />
-      <Footer />
-    </main>
+    <>
+      {/* Toast notification — shown when mailto opens or email is copied */}
+      {toastMsg && (
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 px-5 py-3 rounded-sm shadow-lg" style={{ backgroundColor: "#14161A", border: "1px solid rgba(0,82,255,0.4)" }}>
+          <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "#0052FF" }} />
+          <span className="text-white text-xs tracking-widest" style={{ fontFamily: "var(--font-jetbrains)" }}>{toastMsg}</span>
+        </div>
+      )}
+      <main className="flex flex-col">
+        <NavBar />
+        <HeroSection />
+        <ThermalSection />
+        <SiliconSection />
+        <OpticsSection />
+        <DeploymentSection />
+        <BackersSection />
+        <Footer />
+      </main>
+    </>
   );
 }

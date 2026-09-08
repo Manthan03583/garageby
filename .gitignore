@@ -63,7 +63,7 @@ public/Gemini_Generated_Image_zev1lpzev1lpzev1.png
 public/Gemini_Generated_Image_2vwoe02vwoe02vwo.png
 public/Gemini_Generated_Image_xkho5zxkho5zxkho.png
 
-# Logo assets — not yet wired into any component
-public/logo.png
-public/logo_name.png
-public/logo_with_name.png
+# Logo assets — commit these, they are the real brand assets
+# public/logo.png
+# public/logo_name.png
+# public/logo_with_name.png
