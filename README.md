@@ -8,7 +8,7 @@
 *powered by indigenous 8T-SRAM Digital Compute-in-Memory (DCIM) architecture.*
 
 ![R&D Status](https://img.shields.io/badge/R%26D%20Status-Alpha-0052FF?style=flat-square&labelColor=14161A)
-![Tapeout](https://img.shields.io/badge/Tapeout-Q3%202025-0052FF?style=flat-square&labelColor=14161A)
+![Architecture](https://img.shields.io/badge/Architecture-8T--SRAM%20DCIM%20(2026)-0052FF?style=flat-square&labelColor=14161A)
 ![Location](https://img.shields.io/badge/Bhubaneswar%2C%20Odisha-India-0052FF?style=flat-square&labelColor=14161A)
 
 </div>
@@ -130,7 +130,7 @@ To request the full **DCIM Architecture Dossier**, reach the founding team at:
 
 <div align="center">
 
-© 2025 GarageBy Technologies Pvt. Ltd. · Bhubaneswar, Odisha, India
+© 2026 GarageBy Technologies Pvt. Ltd. · Bhubaneswar, Odisha, India
 
 *Building sovereign hardware for the missions that matter.*
 

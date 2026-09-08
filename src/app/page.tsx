@@ -82,7 +82,7 @@ function HeroSection() {
         <motion.div variants={fadeIn}>
           <span className="inline-flex items-center gap-2 text-xs tracking-widest border border-[#0052FF]/30 rounded-sm px-3 py-1.5 text-[#0052FF] bg-[#0052FF]/5" style={{ fontFamily: "var(--font-jetbrains)" }}>
             <span className="w-1.5 h-1.5 rounded-full bg-[#0052FF] inline-block" />
-            8T-SRAM DCIM // TAPEOUT: Q3 2025
+            8T-SRAM DCIM // ARCHITECTURE · 2026
           </span>
         </motion.div>
         <motion.div variants={fadeIn} className="w-full max-w-2xl aspect-video rounded-sm relative overflow-hidden border border-[#0052FF]/20 shadow-lg">
