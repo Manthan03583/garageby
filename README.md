@@ -1,36 +1,117 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GarageBy — Sovereign Spatial Computing
+
+> Engineering air-gapped, zero-latency situational awareness powered by indigenous **8T-SRAM Digital Compute-in-Memory (DCIM)** architecture.
+
+**R&D Status:** Alpha · **Tapeout Target:** Q3 2025 · **Location:** Bhubaneswar, Odisha, India
+
+---
+
+## What is GarageBy?
+
+GarageBy is building a sovereign spatial computing **helmet** for industrial and tactical deployments. The system is purpose-engineered around three core pillars:
+
+| Pillar | Technology |
+|---|---|
+| **Silicon IP** | Indigenous 8T-SRAM DCIM chip · 180nm CMOS · In-Memory MAC · <12mW inference · <1ms latency |
+| **Hardware** | SLS-printed Nylon PA12 chassis · Fanless passive chimney exhaust · IP67 · MIL-STD-810H |
+| **Optics** | High-Index Holographic Waveguides · 110° Ultra-Wide FOV · 10,000 nits · 240Hz · 8–14µm LWIR IR band |
+
+**Institutional Backing:**
+- STPI Electropreneur Park — Pre-Incubated, MeitY, Govt. of India
+- IIIT Bhubaneswar — Academic Research Partner
+- Startup Odisha — State Recognition, Odisha Govt.
+
+---
+
+## This Repository
+
+This repo contains the **public-facing product landing page** — a single-page investor and partner dossier site built with Next.js.
+
+### Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 16 (App Router) |
+| UI | React 19 |
+| Animation | Framer Motion 13 |
+| Icons | Lucide React |
+| Styling | Tailwind CSS v4 + Vanilla CSS |
+| Language | TypeScript 5 |
+| Fonts | Plus Jakarta Sans · Inter · JetBrains Mono (via `next/font`) |
+
+### Page Sections
+
+| Section | Content |
+|---|---|
+| **Hero** | Helmet in ISO Class 5 cleanroom · Key specs · CTA |
+| **Section 02 — Hardware** | Zero-fan thermal architecture · SLS PA12 chassis |
+| **Section 03 — Core IP** | 8T-SRAM DCIM silicon · Von Neumann bottleneck explainer |
+| **Section 04 — Optics** | 110° holographic waveguide visor · Spec table |
+| **Section 05 — Deployment** | Industrial digital twins · Tactical & defense |
+| **Backers** | STPI · IIIT Bhubaneswar · Startup Odisha |
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- npm
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Run development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Lint
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+```
 
-## Learn More
+### Production build
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+npm run start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+```
+src/
+└── app/
+    ├── layout.tsx        # Root layout — fonts, metadata
+    ├── page.tsx          # Entire single-page application
+    ├── globals.css       # Design tokens + utility animations
+    └── favicon.ico
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+public/
+    ├── Gemini_Generated_Image_zev1lpzev1lpzev1.png   # Hero + Thermal — helmet in ISO Class 5 lab
+    ├── Gemini_Generated_Image_2vwoe02vwoe02vwo.png   # Core IP — 8T-SRAM silicon wafer macro
+    └── Gemini_Generated_Image_xkho5zxkho5zxkho.png  # Optics — 110° holographic visor render
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Contact
+
+**Founder alias:** [founder@garageby.com](mailto:founder@garageby.com?subject=GarageBy%20Alpha%20%7C%20Technical%20Dossier%20Request&body=Please%20provide%20your%20institutional%20affiliation%20to%20receive%20the%20DCIM%20architecture%20dossier.)
+
+Include your institutional affiliation to receive the full DCIM architecture dossier.
+
+---
+
+© 2025 GarageBy Technologies Pvt. Ltd. · Bhubaneswar, Odisha, India

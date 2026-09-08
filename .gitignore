@@ -39,3 +39,26 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# ── Project-specific exclusions ──────────────────────────────────────────────
+
+# Dev utility: writes page.tsx content programmatically — not part of the app
+write_page.js
+
+# Accidental duplicate assets
+public/logo_with_name - Copy.png
+
+# create-next-app scaffold SVGs — not used in this project
+public/next.svg
+public/vercel.svg
+public/window.svg
+public/file.svg
+public/globe.svg
+
+# Stale optics image — replaced by Gemini_Generated_Image_xkho5zxkho5zxkho.png
+public/Gemini_Generated_Image_flocwwflocwwfloc.png
+
+# Logo assets — not yet wired into any component
+public/logo.png
+public/logo_name.png
+public/logo_with_name.png
