@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useInView, type Variants, type Transition } from "framer-motion";
 import { ArrowRight, ChevronRight, Layers, Zap, Shield, Thermometer, Factory, Radio } from "lucide-react";
+import { GarageByLogo } from "@/components/Logo";
 
 // ── Animation Variants ──────────────────────────────────────────────────────
 const easeOut: Transition = { duration: 1.1, ease: "easeOut" };
@@ -34,14 +35,7 @@ function NavBar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <div className="flex items-center">
-          <Image
-            src="/logo_with_name.png"
-            alt="GarageBy"
-            width={160}
-            height={44}
-            className="h-9 w-auto object-contain"
-            priority
-          />
+          <GarageByLogo className="h-8 md:h-9 w-auto" />
         </div>
         <div className="flex items-center gap-2 border border-gray-200 rounded-sm px-3 py-1.5 bg-gray-50" style={{ fontFamily: "var(--font-jetbrains)" }}>
           <span className="w-2 h-2 rounded-full bg-emerald-500 pulse-dot inline-block" />
@@ -489,13 +483,7 @@ function Footer() {
     <footer className="py-8 px-6 bg-gray-50 border-t border-gray-100">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center">
-          <Image
-            src="/logo_with_name.png"
-            alt="GarageBy"
-            width={130}
-            height={36}
-            className="h-7 w-auto object-contain"
-          />
+          <GarageByLogo className="h-7 sm:h-8 w-auto" />
         </div>
         <p className="text-[10px] text-gray-400 text-center tracking-wider" style={{ fontFamily: "var(--font-jetbrains)" }}>
           {`\u00A9 ${new Date().getFullYear()} GarageBy Technologies Pvt. Ltd. -- All rights reserved.`}

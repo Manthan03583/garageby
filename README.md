@@ -1,6 +1,6 @@
 <div align="center">
 
-# GarageBy
+<img src="public/logo_with_name.svg" alt="GarageBy" width="220" />
 
 ### Sovereign Spatial Computing
 
